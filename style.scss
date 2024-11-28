@@ -1,0 +1,78 @@
+// Змінні для кольорів та шрифтів
+$font-primary: 'Gotham', Courier, monospace;
+$background-color: #f1fbff;
+$text-color-dark: #000;
+
+// Основні стилі
+* {
+  font-family: $font-primary;
+}
+
+body {
+  background: $background-color;
+}
+
+// Міксін для секції з відступами
+@mixin section-padding($padding: 100px 0) {
+  padding: $padding;
+}
+
+.section-padding {
+  @include section-padding;
+}
+
+// Стилі для каруселі
+.carousel-item {
+  height: 100vh;
+}
+
+.carousel-caption {
+  bottom: 220px;
+  z-index: 2;
+
+  h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+
+  p {
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+}
+
+.carousel-inner {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+}
+
+// Стилі для навігації
+.navbar-nav {
+  a {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
+
+.navbar-Light {
+  .navbar-brand {
+    color: $text-color-dark;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
